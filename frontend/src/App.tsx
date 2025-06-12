@@ -74,7 +74,7 @@ export default function App() {
       }
     },
   });
-  
+
   useEffect(() => {
     if (scrollAreaRef.current) {
       const scrollViewport = scrollAreaRef.current.querySelector(
