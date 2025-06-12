@@ -5,8 +5,10 @@ install:
 	pip install -r requirements.txt
 
 start-api:
-	source .venv/bin/activate && \
-	uvicorn app.main:app --reload
+	bash -c "source .venv/bin/activate && uvicorn app.main:app --reload"
 
 start-ui:
 	cd ui && npm install && npm run dev
+
+start:
+	make -j 2 start-api start-ui
