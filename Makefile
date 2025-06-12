@@ -20,7 +20,7 @@ dev-frontend:
 # Start just the backend
 dev-backend:
 	@echo "Starting backend development server..."
-	@bash -c "source .venv/bin/activate && cd backend && langgraph dev"
+	@bash -c "source .venv/bin/activate && cd backend && langgraph dev --host 0.0.0.0"
 
 # Display available commands
 help:
