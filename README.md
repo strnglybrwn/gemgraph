@@ -12,4 +12,7 @@ Install dependencies and start the API:
 
 ```bash
 make install
-make start-api
+make start
+make stop
+
+make help
