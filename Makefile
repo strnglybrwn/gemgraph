@@ -1,4 +1,4 @@
-.PHONY: help install dev dev-frontend dev-backend
+.PHONY: install start stop dev-frontend dev-backend help
 
 # Set up Python virtual environment and install backend and frontend dependencies
 install:
@@ -8,9 +8,14 @@ install:
 	cd ../frontend && npm install
 
 # Start both backend and frontend concurrently
-dev:
+start:
 	@echo "Starting both frontend and backend development servers..."
 	@make dev-frontend & make dev-backend
+
+stop:
+	@echo "Stopping frontend and backend servers..."
+	@pkill -f "npm run dev" || true
+	@pkill -f "langgraph dev" || true
 
 # Start just the frontend
 dev-frontend:
@@ -26,12 +31,7 @@ dev-backend:
 help:
 	@echo "Available commands:"
 	@echo "  make install        - Set up virtualenv and install backend/frontend dependencies"
-	@echo "  make dev            - Start both frontend and backend dev servers in parallel"
+	@echo "  make start          - Start both frontend and backend dev servers in parallel"
+	@echo "  make stop           - Stop both frontend and backend dev servers"
 	@echo "  make dev-frontend   - Start the frontend dev server (Vite)"
 	@echo "  make dev-backend    - Start the backend dev server (LangGraph + FastAPI)"
-
-#start-api:
-#	bash -c "source .venv/bin/activate && uvicorn app.main:app --reload"
-
-#start-ui:
-#	cd ui && npm install && npm run dev
