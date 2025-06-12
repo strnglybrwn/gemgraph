@@ -50,13 +50,14 @@ export default function App() {
           }.`,
         };
       } else if (event.reflection) {
+        const queries = Array.isArray(event.reflection.follow_up_queries)
+          ? event.reflection.follow_up_queries.join(", ")
+          : "";
         processedEvent = {
           title: "Reflection",
           data: event.reflection.is_sufficient
             ? "Search successful, generating final answer."
-            : `Need more information, searching for ${event.reflection.follow_up_queries.join(
-                ", "
-              )}`,
+            : `Need more information, searching for ${queries || "..."}`,
         };
       } else if (event.finalize_answer) {
         processedEvent = {
@@ -73,7 +74,7 @@ export default function App() {
       }
     },
   });
-
+  
   useEffect(() => {
     if (scrollAreaRef.current) {
       const scrollViewport = scrollAreaRef.current.querySelector(
