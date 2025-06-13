@@ -16,3 +16,6 @@ make start
 make stop
 
 make help
+
+To do:
+Make service run as a headless service on LAN homelab
