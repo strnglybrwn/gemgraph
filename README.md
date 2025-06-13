@@ -6,6 +6,9 @@ GemGraph is a research and synthesis tool combining FastAPI (backend) and Vite/R
 
 Docker has been removed — the project is now designed for native development and execution.
 
+## To do:
+Make service run as a headless service on LAN homelab
+
 ### 1. Backend (FastAPI)
 
 Install dependencies and start the API:
@@ -16,3 +19,5 @@ make start
 make stop
 
 make help
+
+
