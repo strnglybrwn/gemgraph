@@ -65,7 +65,7 @@ export const InputForm: React.FC<InputFormProps> = ({
                           md:text-base  min-h-[56px] max-h-[200px]`}
           rows={1}
         />
-        <div className="flex-shrink-0 flex items-center gap-2 ml-2">
+        <div className="flex-shrink-0 flex items-center gap-0 ml-2">
           {isLoading ? (
             <Button
               type="button"
