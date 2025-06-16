@@ -54,18 +54,20 @@ export const InputForm: React.FC<InputFormProps> = ({
       <div
         className={`flex flex-row items-center justify-between text-white rounded-3xl rounded-bl-sm ${
           hasHistory ? "rounded-br-sm" : ""
-        } break-words min-h-7 bg-neutral-700 px-4 pt-3 `}
+        } break-words min-h-7 bg-neutral-700 px-4 pt-3`}
       >
-        <Textarea
-          value={internalInputValue}
-          onChange={(e) => setInternalInputValue(e.target.value)}
-          onKeyDown={handleInternalKeyDown}
-          placeholder="Who won the Euro 2024 and scored the most goals?"
-          className={`w-full text-neutral-100 placeholder-neutral-500 resize-none border-0 focus:outline-none focus:ring-0 outline-none focus-visible:ring-0 shadow-none 
-                        md:text-base  min-h-[56px] max-h-[200px]`}
-          rows={1}
-        />
-        <div className="-mt-3">
+        <div className="flex-1">
+          <Textarea
+            value={internalInputValue}
+            onChange={(e) => setInternalInputValue(e.target.value)}
+            onKeyDown={handleInternalKeyDown}
+            placeholder="type your prompt here and I will make the magic happen!"
+            className={`w-full text-neutral-100 placeholder-neutral-500 resize-none border-0 focus:outline-none focus:ring-0 outline-none focus-visible:ring-0 shadow-none 
+                          md:text-base  min-h-[56px] max-h-[200px]`}
+            rows={1}
+          />
+        </div>
+        <div className="flex-shrink-0 flex items-center gap-2 ml-2">
           {isLoading ? (
             <Button
               type="button"

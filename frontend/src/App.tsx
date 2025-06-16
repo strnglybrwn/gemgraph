@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ProcessedEvent } from "@/components/ActivityTimeline";
 import { WelcomeScreen } from "@/components/WelcomeScreen";
 import { ChatMessagesView } from "@/components/ChatMessagesView";
+import useSpeechRecognition from "@/hooks/useSpeechRecognition";
 
 export default function App() {
   const [processedEventsTimeline, setProcessedEventsTimeline] = useState<
@@ -138,12 +139,22 @@ export default function App() {
           id: Date.now().toString(),
         },
       ];
-      thread.submit({
-        messages: newMessages,
-        initial_search_query_count: initial_search_query_count,
-        max_research_loops: max_research_loops,
-        reasoning_model: model,
-      });
+      try {
+        thread.submit({
+          messages: newMessages,
+          initial_search_query_count: initial_search_query_count,
+          max_research_loops: max_research_loops,
+          reasoning_model: model,
+        });
+      } catch (error: any) {
+        console.error("Submission failed:", error);
+        thread.append({
+          type: "system",
+          content:
+            "⚠️ The model is currently overloaded. Please try again in a few seconds.",
+          id: Date.now().toString(),
+        });
+      }
     },
     [thread]
   );
