@@ -22,13 +22,13 @@ export default defineConfig(({ mode }) => {
       allowedHosts: [externalHost],
       proxy: {
         "/api": {
-          target: `http://${externalHost}:2024`,
+          target: `http://${env.BACKEND_HOST}:${env.BACKEND_PORT}`,
           changeOrigin: true,
         },
       },
     },
     define: {
-      __EXTERNAL_URL__: JSON.stringify(`http://${env.VITE_EXTERNAL_URL}:5173`),
+      __EXTERNAL_URL__: JSON.stringify(`http://${env.VITE_EXTERNAL_URL}:${env.VITE_EXTERNAL_PORT}`),
     },
   };
 });
