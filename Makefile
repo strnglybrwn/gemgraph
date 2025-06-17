@@ -2,15 +2,27 @@
 
 # Set up Python virtual environment and install backend and frontend dependencies
 install:
+	@if [ ! -f .env ] || ! grep -q '^VITE_EXTERNAL_URL=' .env || [ -z "$$(grep '^VITE_EXTERNAL_URL=' .env | cut -d'=' -f2)" ]; then \
+	echo "VITE_EXTERNAL_URL not set. Please enter the LAN hostname (e.g. jarvis.local):"; \
+	read host; \
+	sed -i '' '/^VITE_EXTERNAL_URL=/d' .env; \
+	echo "VITE_EXTERNAL_URL=$$host" >> .env; \
+	fi
+
 	python3 -m venv .venv && \
 	source .venv/bin/activate && \
 	cd backend && pip install -e . && \
 	cd ../frontend && npm install
 
+	@read -p "Would you like to start the application server now? [Y/n] " answer; \
+	if [ "$$answer" = "Y" ] || [ "$$answer" = "y" ] || [ -z "$$answer" ]; then \
+		make start; \
+	fi
+
 # Start both backend and frontend concurrently
 start:
 	@echo "Starting both frontend and backend development servers..."
-	@make dev-frontend & make dev-backend
+	set -a && source .env && set +a && @make dev-frontend & make dev-backend
 
 stop:
 	@echo "Stopping frontend and backend servers..."
