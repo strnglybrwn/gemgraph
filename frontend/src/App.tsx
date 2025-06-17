@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ProcessedEvent } from "@/components/ActivityTimeline";
 import { WelcomeScreen } from "@/components/WelcomeScreen";
 import { ChatMessagesView } from "@/components/ChatMessagesView";
-import useSpeechRecognition from "@/hooks/useSpeechRecognition";
 
 export default function App() {
   const [processedEventsTimeline, setProcessedEventsTimeline] = useState<

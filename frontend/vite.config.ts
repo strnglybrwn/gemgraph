@@ -6,7 +6,7 @@ import { loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, path.resolve(__dirname, ".."));
-  const externalHost = env.VITE_EXTERNAL_URL || "jarvis.local";
+  const externalHost = env.VITE_EXTERNAL_URL;
 
   return {
     plugins: [react(), tailwindcss()],
