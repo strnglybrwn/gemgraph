@@ -22,7 +22,7 @@ install:
 # Start both backend and frontend concurrently
 start:
 	@echo "Starting both frontend and backend development servers..."
-	set -a && source .env && set +a && @make dev-frontend & make dev-backend
+	@make dev-frontend & make dev-backend
 
 stop:
 	@echo "Stopping frontend and backend servers..."

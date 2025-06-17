@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 import { loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd());
+  const env = loadEnv(mode, path.resolve(__dirname, ".."));
+  const externalHost = env.VITE_EXTERNAL_URL || "jarvis.local";
 
   return {
     plugins: [react(), tailwindcss()],
@@ -18,10 +19,10 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       port: 5173,
-      allowedHosts: [env.VITE_EXTERNAL_URL],
+      allowedHosts: [externalHost],
       proxy: {
         "/api": {
-          target: `http://${env.VITE_EXTERNAL_URL}:2024`,
+          target: `http://${externalHost}:2024`,
           changeOrigin: true,
         },
       },
