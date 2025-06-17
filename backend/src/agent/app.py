@@ -1,7 +1,12 @@
 # mypy: disable - error - code = "no-untyped-def,misc"
 import pathlib
+import os
 from fastapi import FastAPI, Response
 from fastapi.staticfiles import StaticFiles
+
+# Expose backend host and port as environment-configurable settings
+BACKEND_HOST = os.getenv("BACKEND_HOST", "0.0.0.0")
+BACKEND_PORT = int(os.getenv("BACKEND_PORT", "2024"))
 
 # Define the FastAPI app
 app = FastAPI()
