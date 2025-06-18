@@ -28,13 +28,10 @@
 ```bash
 git clone https://github.com/strnglybrwn/gemgraph.git
 cd gemgraph
-make install         # creates virtualenv and installs backend deps
+make install         # creates virtualenv, installs backend deps, prompts for a friendly servername and optionally starts application
 make start           # starts FastAPI backend
-cd frontend
-npm install          # installs frontend deps
-npm run dev          # starts Vite frontend
+make stop            # stops all services cleanly and frees ports
 ```
-
 - Access API docs: [http://localhost:8000/docs](http://localhost:8000/docs)  
 - Access app UI: [http://localhost:5173](http://localhost:5173)  
 
