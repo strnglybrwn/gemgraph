@@ -27,7 +27,7 @@
 
 ```bash
 git clone https://github.com/strnglybrwn/gemgraph.git
-cd gemgraph
+cd to wherever you did the git conle to ie ~/dev/gemgraph
 make install         # creates virtualenv and installs backend deps
 make start           # starts FastAPI backend
 cd frontend
