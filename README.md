@@ -29,7 +29,8 @@
 ```bash
 git clone https://github.com/strnglybrwn/gemgraph.git
 cd whereever you did the git clone to eg ~/projects/gemgraph
-make install         # creates virtualenv and installs backend deps
+make install         # creates virtualenv and installs backend deps and asks for a friendly name (use localhost as default)
+                     # if you're testing locally on machine also prompts to optionally start the servers 
 make start           # starts FastAPI backend
 make stop            # stops all services cleanly and frees ports
 ```
