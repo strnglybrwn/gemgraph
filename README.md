@@ -90,15 +90,6 @@ cd frontend && npm test
 
 ---
 
-## 🤝 Contributing
-
-1. Fork the repo & branch from `main`  
-2. Submit PR with clear description  
-3. Style guide: Black (Python), Prettier (JS/TS)  
-4. License: Apache 2.0  
-
----
-
 ## 📄 License
 
 Licensed under the [Apache-2.0 License](LICENSE).
