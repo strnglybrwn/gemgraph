@@ -79,8 +79,8 @@ cd frontend && npm test
 
 ## 📦 Deployment
 
-- Designed for LAN deployment via Mac Mini server  
-- Use static IP or Bonjour address (e.g. `http://jarvis.local:5173`)  
+- Designed for LAN deployment via local homelab or server  
+- Use static IP or Bonjour address (e.g. `http://server.local:5173`)  
 - Update `vite.config.ts` → `server.allowedHosts` to include local hostname  
 - Optionally configure nginx or Caddy as reverse proxy  
 
@@ -88,8 +88,17 @@ cd frontend && npm test
 
 ## 📸 Diagrams
 
-- `app.png` – System architecture  
-- `agent.png` – LLM agent flow  
+![App Architecture](app.png)
+![LLM Agent Flow](agent.png)
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo & branch from `main`  
+2. Submit PR with clear description  
+3. Style guide: Black (Python), Prettier (JS/TS)  
+4. License: Apache 2.0  
 
 ---
 
