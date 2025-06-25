@@ -61,8 +61,8 @@ make stop            # stops all services cleanly and frees ports
 - Run tests:
 
 ```bash
-cd backend && pytest
-cd frontend && npm test
+cd backend && make help to view test options
+cd frontend && npm run to view runnable scripts 
 ```
 
 ---
@@ -73,23 +73,17 @@ cd frontend && npm test
 |----------------------------------|-----------------------------------------------|
 | `make install` fails             | Use Python 3.11+, check `pip`, `venv`         |
 | 5173 UI not loading              | Ensure backend is up and CORS is allowed      |
-| `thread.append` error in UI      | Validate response JSON format from backend    |
+| `thread.append` error in UI      | Validate response JSON format from backend in |
+|                                  | browser console                               |
 
 ---
 
 ## 📦 Deployment
 
-- Designed for LAN deployment via local homelab or server  
-- Use static IP or Bonjour address (e.g. `http://server.local:5173`)  
-- Update `vite.config.ts` → `server.allowedHosts` to include local hostname  
+- Designed for LAN deployment via local homelab/server  
+- Use static IP or Bonjour address (e.g. `http://server.local:5173` or `http://x.x.x.x:5173`)  
+- At 'make install' step above you will be prompted for an external hostname, this is stored in ~/gemgraph/.env 
 - Optionally configure nginx or Caddy as reverse proxy  
-
----
-
-## 📸 Diagrams
-
-![App Architecture](app.png)
-![LLM Agent Flow](agent.png)
 
 ---
 
