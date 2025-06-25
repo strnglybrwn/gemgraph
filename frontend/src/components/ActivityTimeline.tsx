@@ -20,7 +20,13 @@ import { useEffect, useState } from "react";
 
 export interface ProcessedEvent {
   title: string;
-  data: any;
+  /** 
+   * Individual event payload.  
+   * - `string` for simple messages  
+   * - `string[]` for lists of items  
+   * - `Record<string, unknown>` for arbitrary structured data
+   */
+  data: string | string[] | Record<string, unknown>;
 }
 
 interface ActivityTimelineProps {

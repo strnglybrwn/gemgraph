@@ -55,7 +55,9 @@ export default function App() {
         const sources = event.web_research.sources_gathered || [];
         const numSources = sources.length;
         const uniqueLabels = [
-          ...new Set(sources.map((s: any) => s.label).filter(Boolean)),
+          ...new Set(
+            sources.map((s: { label?: string }) => s.label).filter(Boolean)
+          ),
         ];
         const exampleLabels = uniqueLabels.slice(0, 3).join(", ");
         processedEvent = {
@@ -160,8 +162,9 @@ export default function App() {
           max_research_loops: max_research_loops,
           reasoning_model: model,
         });
-      } catch (error: any) {
-        console.error("Submission failed:", error);
+      } catch (error) {
+        const err = error as Error;
+        console.error("Submission failed:", err);
         thread.append({
           type: "system",
           content:
