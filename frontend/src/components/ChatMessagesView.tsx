@@ -1,5 +1,5 @@
 import type React from "react";
-import type { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
+import type { AnchorHTMLAttributes, BlockquoteHTMLAttributes, DetailedHTMLProps } from "react";
 import type { Message } from "@langchain/langgraph-sdk";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Loader2, Copy, CopyCheck } from "lucide-react";
@@ -80,7 +80,11 @@ const mdComponents = {
       {children}
     </li>
   ),
-  blockquote: ({ className, children, ...props }: MdComponentProps) => (
+  blockquote: ({
+    className,
+    children,
+    ...props
+  }: DetailedHTMLProps<BlockquoteHTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>) => (
     <blockquote
       className={cn(
         "border-l-4 border-neutral-600 pl-4 italic my-3 text-sm",
