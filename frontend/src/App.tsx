@@ -1,3 +1,18 @@
+type LangGraphEvent = {
+  generate_query?: {
+    query_list: string[];
+  };
+  web_research?: {
+    sources_gathered?: {
+      label?: string;
+    }[];
+  };
+  reflection?: {
+    is_sufficient: boolean;
+    follow_up_queries?: string[];
+  };
+  finalize_answer?: boolean;
+};
 import { useStream } from "@langchain/langgraph-sdk/react";
 import type { Message } from "@langchain/langgraph-sdk";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -26,10 +41,10 @@ export default function App() {
       : `http://${window.location.hostname}:8123`,
     assistantId: "agent",
     messagesKey: "messages",
-    onFinish: (event: any) => {
+    onFinish: (event: LangGraphEvent) => {
       console.log(event);
     },
-    onUpdateEvent: (event: any) => {
+    onUpdateEvent: (event: LangGraphEvent) => {
       let processedEvent: ProcessedEvent | null = null;
       if (event.generate_query) {
         processedEvent = {
