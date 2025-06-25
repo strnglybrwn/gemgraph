@@ -13,10 +13,8 @@ export const BottomInputBar: React.FC<BottomInputBarProps> = ({
   onCancel,
 }) => {
   const [input, setInput] = React.useState("");
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [effort, setEffort] = React.useState("medium");
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [model, setModel] = React.useState("gpt-4");
+  const effort = "medium";
+  const model = "gpt-4";
 
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
