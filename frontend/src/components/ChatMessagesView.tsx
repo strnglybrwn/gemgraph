@@ -1,4 +1,5 @@
 import type React from "react";
+import type { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
 import type { Message } from "@langchain/langgraph-sdk";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Loader2, Copy, CopyCheck } from "lucide-react";
@@ -17,6 +18,7 @@ import {
 type MdComponentProps = {
   className?: string;
   children?: ReactNode;
+  href?: string | undefined;
   [key: string]: unknown;
 };
 
@@ -42,7 +44,15 @@ const mdComponents = {
       {children}
     </p>
   ),
-  a: ({ className, children, href, ...props }: MdComponentProps) => (
+  a: ({
+    className,
+    children,
+    href,
+    ...props
+  }: DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >) => (
     <Badge className="text-xs mx-0.5">
       <a
         className={cn("text-blue-400 hover:text-blue-300 text-xs", className)}
