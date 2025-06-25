@@ -165,12 +165,13 @@ export default function App() {
       } catch (error) {
         const err = error as Error;
         console.error("Submission failed:", err);
-        thread.append({
-          type: "system",
-          content:
-            "⚠️ The model is currently overloaded. Please try again in a few seconds.",
-          id: Date.now().toString(),
-        });
+        setProcessedEventsTimeline((prev) => [
+          ...prev,
+          {
+            title: "Error",
+            data: "⚠️ The model is currently overloaded. Please try again in a few seconds.",
+          },
+        ]);
       }
     },
     [thread]
