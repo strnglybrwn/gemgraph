@@ -123,7 +123,9 @@ export default function App() {
   const handleSubmit = useCallback(
     (submittedInputValue: string, effort: string, model: string) => {
       if (!submittedInputValue.trim()) return;
-      setProcessedEventsTimeline([]);
+      setProcessedEventsTimeline([
+        { title: "Research", data: "Starting research..." }
+      ]);
       hasFinalizeEventOccurredRef.current = false;
 
       // convert effort to, initial_search_query_count and max_research_loops
