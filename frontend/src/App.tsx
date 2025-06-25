@@ -41,8 +41,8 @@ export default function App() {
       : `http://${window.location.hostname}:8123`,
     assistantId: "agent",
     messagesKey: "messages",
-    onFinish: (event: LangGraphEvent) => {
-      console.log(event);
+    onFinish: (state) => {
+      console.log("Final thread state:", state);
     },
     onUpdateEvent: (event: LangGraphEvent) => {
       let processedEvent: ProcessedEvent | null = null;
