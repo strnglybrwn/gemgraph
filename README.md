@@ -55,8 +55,8 @@ make dev-backend     # starts the backend dev server (LangGraph + FastAPI)"
   - Ingestion, agent orchestration, APIs  
 - **Frontend**: `/frontend`  
   - Query interface, result visualization  
-
 ---
+![agentic flow diagram of application](agent.png)
 
 ## Development Workflow
 
@@ -69,7 +69,6 @@ make dev-backend     # starts the backend dev server (LangGraph + FastAPI)"
 cd backend && make help to view test options
 cd frontend && npm run to view runnable scripts 
 ```
-
 ---
 
 ## Troubleshooting
