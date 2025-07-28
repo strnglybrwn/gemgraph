@@ -1,7 +1,7 @@
 # GemGraph
 
 **GemGraph** is a research-driven AI synthesis tool combining a FastAPI backend and a Vite/React frontend. It enables agentic workflows over web and local documents, designed for experimentation with LLMs, semantic analysis, and modular pipeline orchestration.
-(forked from https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart and adjusted to clean up depencency installs, local LAN run)
+(forked from https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart and updated to clean up depencency installs, local LAN run)
 
 ---
 
