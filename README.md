@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 Features
+## Features
 
 - FastAPI REST API with auto-generated documentation
 - Modular agent and graph reasoning pipeline  
