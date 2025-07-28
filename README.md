@@ -17,7 +17,7 @@
 
 ## 🧰 Prerequisites
 
-- macOS 12+ (tested on macOS Tahoe26)  
+- Assumes macOS 12+ (tested on macOS Tahoe26)  
 - Python 3.11+  
 - Node.js 18+  
 - `make`, `pip`, and optionally `pipx`  
