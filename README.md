@@ -7,15 +7,15 @@
 
 ## 🚀 Features
 
-- ⚡ FastAPI REST API with auto-generated documentation  
-- 🎛️ Modular agent and graph reasoning pipeline  
-- 🌐 Vite + React + TypeScript frontend  
-- 📎 Web and document ingestion workflows  
-- 🧠 Supports LLM-driven synthesis  
+- FastAPI REST API with auto-generated documentation
+- Modular agent and graph reasoning pipeline  
+- Vite + React + TypeScript frontend  
+- Web and document ingestion workflows  
+- Supports LLM-driven synthesis  
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 - Assumes macOS 12+ (tested on macOS Tahoe26)  
 - Python 3.11+  
@@ -27,23 +27,24 @@
 
 ---
 
-## 🏗️ Setup
+## Setup
 
 ```bash
 git clone https://github.com/strnglybrwn/gemgraph.git
 cd whereever you did the git clone to eg ~/projects/gemgraph
 make install         # creates virtualenv and installs backend deps and asks for a friendly 
-                     # name (use localhost as default) if you're testing locally on machine 
+                     # name (uses localhost as default) if you're testing locally on machine 
                      # also prompts to optionally start the servers 
 make start           # starts FastAPI backend
 make stop            # stops all services cleanly and frees ports
+make dev-frontend    # starts the frontend dev server (Vite)
+make dev-backend     # starts the backend dev server (LangGraph + FastAPI)"
 ```
 - Access API docs: [http://localhost:8000/docs](http://localhost:8000/docs)  
 - Access app UI: [http://localhost:5173](http://localhost:5173)  
-
 ---
 
-## ⚙️ Architecture
+## Architecture
 
 ```
 [React UI (Vite)] ← HTTP → [FastAPI REST API] ← LLMs, Graph Workflows, Ingestors
@@ -56,7 +57,7 @@ make stop            # stops all services cleanly and frees ports
 
 ---
 
-## 🧪 Development Workflow
+## Development Workflow
 
 - Add new services under `backend/services/`  
 - Register endpoints in `backend/apis/`  
@@ -70,7 +71,7 @@ cd frontend && npm run to view runnable scripts
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 | Problem                          | Fix                                           |
 |----------------------------------|-----------------------------------------------|
@@ -81,7 +82,7 @@ cd frontend && npm run to view runnable scripts
 
 ---
 
-## 📦 Deployment
+## Deployment
 
 - Designed for LAN deployment via local homelab/server  
 - Use static IP or Bonjour address (e.g. `http://server.local:5173` or `http://x.x.x.x:5173`)  
@@ -90,6 +91,6 @@ cd frontend && npm run to view runnable scripts
 
 ---
 
-## 📄 License
+## License
 
 Licensed under the [Apache-2.0 License](LICENSE).
