@@ -32,6 +32,7 @@
 ```bash
 git clone https://github.com/strnglybrwn/gemgraph.git
 cd whereever you did the git clone to eg ~/projects/gemgraph
+make help            # lists available actions in make
 make install         # creates virtualenv and installs backend deps and asks for a friendly 
                      # name (uses localhost as default) if you're testing locally on machine 
                      # also prompts to optionally start the servers 
