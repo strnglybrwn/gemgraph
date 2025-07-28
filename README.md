@@ -82,7 +82,7 @@ cd frontend && npm run to view runnable scripts
 
 - Designed for LAN deployment via local homelab/server  
 - Use static IP or Bonjour address (e.g. `http://server.local:5173` or `http://x.x.x.x:5173`)  
-- At 'make install' step above you will be prompted for an external hostname, this is stored in ~/gemgraph/.env 
+- At 'make install' step above you will be prompted for an external hostname, this is stored in the root of your project eg ~/projects/gemgraph/.env 
 - Optionally configure nginx or Caddy as reverse proxy  
 
 ---
