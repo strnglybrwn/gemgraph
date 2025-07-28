@@ -19,7 +19,10 @@
 
 - Assumes macOS 12+ (tested on macOS Tahoe26)  
 - Python 3.11+  
-- Node.js 18+  
+- Node.js 18+
+- You will need to get a Gemini_API_Key and Langsmith_API_Key which should be updated in your .env at the root of the project 
+-- GEMINI_API_KEY=<your_gemini_api_key>
+-- LANGSMITH_API_KEY=<your_langsmith_api_key
 - `make`, `pip`, and optionally `pipx`  
 
 ---
